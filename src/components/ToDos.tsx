@@ -43,11 +43,11 @@ const ToDos: React.FC<Props> = props => {
     return (
         <Wrapper>
             <TextInput id="text-field" value={text} onChange={handleTextInput} onKeyDown={setNewItem} />
-            <List>
+            <List id="todo-list">
                 {
                     Object.values(items).map(item => (
-                        <Item id={item.id} key={item.id}>
-                            <CheckBox checked={item.done} onChange={checkItem(item.id)} /> {item.text} <DeleteBtn onClick={deleteItem(item.id)}>x</DeleteBtn>
+                        <Item className="todo-item" id={item.id} key={item.id}>
+                            <CheckBox checked={item.done} onChange={checkItem(item.id)} /> {item.text} <DeleteBtn className="delete-btn" onClick={deleteItem(item.id)}>x</DeleteBtn>
                         </Item>
                     ))
                 }
