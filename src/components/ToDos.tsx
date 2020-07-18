@@ -47,7 +47,9 @@ const ToDos: React.FC<Props> = props => {
                 {
                     Object.values(items).map(item => (
                         <Item className="todo-item" id={item.id} key={item.id}>
-                            <CheckBox checked={item.done} onChange={checkItem(item.id)} /> {item.text} <DeleteBtn className="delete-btn" onClick={deleteItem(item.id)}>x</DeleteBtn>
+                            <CheckBox checked={item.done} onChange={checkItem(item.id)} />
+                            {item.text}
+                            <DeleteBtn className="delete-btn" onClick={deleteItem(item.id)}>x</DeleteBtn>
                         </Item>
                     ))
                 }
